@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
-    validates :name, uniqueness: true
+    validates :name, presence: true, uniqueness: true
+    
     has_many :users
 end
