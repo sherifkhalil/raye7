@@ -7,7 +7,7 @@ class Trip < ApplicationRecord
     belongs_to :destination, foreign_key: :destination_id, class_name: 'Place'
 
 
-    def user_available_trips(user)
+    def self.user_available_trips(user)
         joins('
             join users on users.id = trips.driver_id 
             join groups on groups.id = users.group_id 
