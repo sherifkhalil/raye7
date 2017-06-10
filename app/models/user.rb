@@ -5,7 +5,7 @@ class User < ApplicationRecord
     belongs_to :group
 
     has_many :user_trips
-    has_many :trips, through: :user_trips
+    has_many :trips, through: :user_trips, dependent: :delete_all
 
     belongs_to :home_place, class_name: 'Place'
     belongs_to :work_place, class_name: 'Place'
