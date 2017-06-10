@@ -8,7 +8,6 @@ class Trip < ApplicationRecord
 
 
     def user_available_trips(user)
-        # user = User.find(user_id).select(:work_place_id, :home_place_id)
         joins('
             join users on users.id = trips.driver_id 
             join groups on groups.id = users.group_id 
